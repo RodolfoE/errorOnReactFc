@@ -1,3 +1,9 @@
+/**
+ Recursos:
+
+ https://forum.fusioncharts.com/topic/11581-overlapping-values-on-multi-series-line-chart/
+ */
+
 import './App.css';
 
 // Step 1 - Include react
@@ -24,8 +30,8 @@ const chartConfigs =
   {
     type: "msline",
     width: 600,
-    height: 275,
-    containerBackgroundOpacity: "1",
+    height: 675,
+    containerBackgroundOpacity: "0",
     dataSource: {
       chart: {
         caption: null,
@@ -234,7 +240,7 @@ const chartConfigs =
               valueDecimal: null,
               color: null,
               showPlotBorder: true,
-              alpha: null,
+              
               showValue: null,
               showLabel: false,
               displayValue: null,
@@ -1319,12 +1325,12 @@ const chartConfigs =
               valorParaOrdenacao: 0,
             },
           ],
-          anchorSides: null,
-          anchorRadius: null,
-          dashed: null,
-          anchorAlpha: null,
-          rotateValues: null,
-          placeValuesInside: null,
+          anchorSides: true,
+          anchorRadius: true,
+          dashed: true,
+          anchorAlpha: true,
+          rotateValues: true,
+          placeValuesInside: true,
         },
         {
           seriesname: "Completed",
@@ -2426,11 +2432,11 @@ const chartConfigs =
             },
           ],
           anchorSides: null,
-          anchorRadius: null,
-          dashed: null,
-          anchorAlpha: null,
-          rotateValues: null,
-          placeValuesInside: null,
+          anchorRadius: true,
+          dashed: true,
+          anchorAlpha: true,
+          rotateValues: true,
+          placeValuesInside: true,
         },
         {
           seriesname: "Outdated",
@@ -3647,8 +3653,15 @@ const chartConfigs =
     },
   };
 
+  //chartConfigs.dataSource.dataSet[0].data.forEach(x => x.valuePosition = "BELOW") //pending
+  //chartConfigs.dataSource.dataSet[1].data.forEach(x => x.valuePosition = "AUTO") //completed
+  //chartConfigs.dataSource.dataSet[0].data.forEach(x => x.valuePosition = "AUTO") //outdated
 
 // STEP 4 - Creating the DOM element to pass the react-fusioncharts component
+
+function farNd() {
+  
+}
 class App extends React.Component {
   render() {
     return (<ReactFC {...chartConfigs} />);
